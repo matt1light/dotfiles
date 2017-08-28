@@ -1,3 +1,4 @@
+set encoding=utf-8
 filetype plugin indent on
 " show existing tab with 2 spaces width
 set tabstop=2
