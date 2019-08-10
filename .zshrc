@@ -1,9 +1,8 @@
-export TERM="konsole-256color"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=~/.oh-my-zsh
+export ZSH=/home/mattias/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -52,9 +51,20 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+  git 
+  z 
+  npm 
+  colored-man-pages 
+  colorize 
+  web-search
+  themes
+)
 
 source $ZSH/oh-my-zsh.sh
+source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source <(kubectl completion zsh)
+
 
 # User configuration
 
@@ -84,3 +94,18 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+export PATH="$HOME/.rbenv/bin:$PATH"
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+eval "$(rbenv init -)"
+export PATH="$HOME/.scripts:$PATH"
+
+# android sdk
+export ANDROID_SDK=/Users/mattias/Android/sdk
+
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/mattias/git/udemy/kubernetes/google-cloud-sdk/path.zsh.inc' ]; then . '/home/mattias/git/udemy/kubernetes/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/mattias/git/udemy/kubernetes/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/mattias/git/udemy/kubernetes/google-cloud-sdk/completion.zsh.inc'; fi
